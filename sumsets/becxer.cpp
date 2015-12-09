@@ -5,10 +5,10 @@
 using namespace std;                                                            
                                                                                 
 int E[MAX_P][MAX_COUNT];                                                        
-int p2[MAX_P];                                                                  
+int pow[MAX_P];                                                                 
                                                                                 
 int main(void){                                                                 
-    p2[0] = 1;                                                                  
+    pow[0] = 1;                                                                 
     int N; cin >> N;                                                            
                                                                                 
     for(int i = 0; i < MAX_COUNT; i++) E[0][i] = 1;                             
@@ -16,23 +16,24 @@ int main(void){
     for(int j = 1; j < MAX_P; j++){                                             
         E[j][0] = 1;                                                            
         E[j][1] = 1;                                                            
-        p2[j] = p2[j-1] * 2;                                                    
+        pow[j] = pow[j-1] * 2;                                                  
     }                                                                           
                                                                                 
     for(int n = 1 ; n <= N ; n++){                                              
         for(int p = 1 ; p < MAX_P ; p++){                                       
             E[p][n] = 0;                                                        
-            if( p2[p] > n ) {                                                   
+                                                                                
+            if( pow[p] > n ) {                                                  
                 E[p][n] = E[p-1][n];                                            
                 continue;                                                       
             }                                                                   
                                                                                 
             for(int q = 0; q <= p ; q++){                                       
-               E[p][n] += E[q][n-p2[q]];
-               E[p][n] %= 1000000000;                         
+               E[p][n] += E[q][n-pow[q]];                                       
+               E[p][n] %= 1000000000;                                           
             }                                                                   
         }                                                                       
     }                                                                           
-    cout << E[MAX_P-1][N] % 1000000000 << endl;                                              
+    cout << E[MAX_P-1][N] % 1000000000 << endl;                                 
     return 0;                                                                   
-}
+} 
