@@ -22,16 +22,18 @@ int main(void){
     for(int n = 1 ; n <= N ; n++){
         for(int p = 1 ; p < MAX_P ; p++){
             E[p][n] = 0;
+
             if( p2[p] > n ) {
                 E[p][n] = E[p-1][n];
                 continue;
             }
 
             for(int q = 0; q <= p ; q++){
-               E[p][n] += E[q][n-p2[q]];   
+               E[p][n] += E[q][n-p2[q]];
+               E[p][n] %= 1000000000;   
             }
         }
     }
     cout << E[MAX_P-1][N] % 1000000000 << endl;
     return 0;
-}
+} 
