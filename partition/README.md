@@ -1,3 +1,5 @@
+http://59.23.113.171/30stair/partition/partition.php?pname=partition
+
 프로그램 명: partition
 
 제한시간: 1 초
