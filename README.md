@@ -1,5 +1,5 @@
 # algorithm
 
-whoyster algorithm problem solving study
+Whoyster algorithm problem solving study
 
-mission : get expert
+Mission : Getting expertise !
