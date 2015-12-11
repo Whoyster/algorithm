@@ -1,3 +1,5 @@
+http://59.23.113.171/30stair/race1/race1.php?pname=race1&stair=21
+
 프로그램 명: race1
 
 제한시간: 1 초
